@@ -1,0 +1,18 @@
+{
+  "name": "vba-lang",
+  "description": "Visual Basic for Application language server client.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Jozef Izso",
+  "engines": {
+    "node": "16 || >=18",
+    "vscode": "^1.74.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-electron": "^2.2.2"
+  }
+}

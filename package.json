@@ -23,7 +23,7 @@
 		"WWB"
 	],
 	"activationEvents": [],
-	"main": "./out/extension.js",
+	"main": "./client/out/extension",
 	"capabilities": {
 		"untrustedWorkspaces": {
 			"supported": true
@@ -68,9 +68,9 @@
 		]
 	},
 	"scripts": {
-		"compile": "tsc -p ./",
-		"watch": "tsc --watch -p ./",
-		"lint": "eslint .",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
 		"test": "npm run test-vba && npm run test-wwb",
 		"test-vba": "vscode-tmgrammar-test -g ./out/vba.tmGrammar.json \"syntaxes/tests/vba/*.bas\"",
 		"test-wwb": "vscode-tmgrammar-test -g ./out/wwb.tmGrammar.json \"syntaxes/tests/other/*.wwd\"",
