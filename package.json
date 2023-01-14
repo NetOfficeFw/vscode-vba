@@ -25,6 +25,7 @@
 	"activationEvents": [],
 	"main": "./client/out/extension",
 	"capabilities": {
+		"hoverProvider" : "true",
 		"untrustedWorkspaces": {
 			"supported": true
 		}

@@ -1,7 +1,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+import { workspace, ExtensionContext, languages } from 'vscode';
 
 import {
   LanguageClient,
@@ -9,6 +9,8 @@ import {
   ServerOptions,
   TransportKind
 } from 'vscode-languageclient/node';
+
+import { VbaHoverProvider } from './hover';
 
 let client: LanguageClient;
 
@@ -28,9 +30,10 @@ export function activate(context: ExtensionContext) {
     }
   };
 
+  const vbaLang = { scheme: 'file', language: 'vba' };
   // register server for Visual Basic for Application language
   const clientOptions: LanguageClientOptions = {
-    documentSelector: [{ scheme: 'file', language: 'vba' }],
+    documentSelector: [ vbaLang ],
     synchronize: {
       fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
     }
@@ -43,6 +46,10 @@ export function activate(context: ExtensionContext) {
     serverOptions,
     clientOptions
   );
+
+  context.subscriptions.push(
+    languages.registerHoverProvider(vbaLang, new VbaHoverProvider())
+  )
 
   // start the clientand launch the server
   client.start();
