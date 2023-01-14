@@ -24,7 +24,7 @@ patterns:
 repository:
   comments:
     name: comment.line.quote
-    begin: "'"
+    begin: "(?i)'|Rem"
     end: $
 
   keywords:

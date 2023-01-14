@@ -6,6 +6,12 @@ Attribute VB_Name = "SyntaxTest"
   ' Some comment
 ' ^^^^^^^^^^^^^^ comment.line.quote
 
+  Rem Alternative comment style
+' ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.quote
+
+  REM Alternative comment style
+' ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.quote
+
 Public Const FOO As Integer = 1
 '      ^^^^^ keyword.other.vba
 '                ^^ keyword.control.vba
