@@ -39,7 +39,8 @@
 				"extensions": [
 					".bas",
 					".cls",
-					".frm"
+					".frm",
+					".vb"
 				],
 				"configuration": "./out/language-configuration.json"
 			},
